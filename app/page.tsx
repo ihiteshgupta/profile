@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, Suspense } from "react"
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -161,7 +162,13 @@ export default function CosmicProfile() {
                 <div className="relative">
                   <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-purple-500/50 shadow-lg shadow-purple-500/20">
                     <div className="w-full h-full relative group">
-                      <img src="/profile-photo.jpeg" alt="Hitesh Gupta" className="w-full h-full object-cover object-top" />
+                      <Image 
+                        src="/profile-photo.jpeg" 
+                        alt="Hitesh Gupta" 
+                        fill={true}
+                        priority={true}
+                        className="object-cover object-top" 
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-purple-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                   </div>

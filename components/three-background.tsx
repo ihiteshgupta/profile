@@ -10,7 +10,7 @@ function MovingStars({ count = 5000 }) {
   const mesh = useRef<THREE.Points>(null!)
   const mousePosition = useMousePosition()
 
-  useFrame((state) => {
+  useFrame(() => {
     if (!mesh.current) return
 
     // Slow rotation based on mouse position
@@ -27,6 +27,7 @@ function MovingStars({ count = 5000 }) {
           array={new Float32Array(count * 3)}
           itemSize={3}
           usage={THREE.DynamicDrawUsage}
+          args={[new Float32Array(count * 3), 3]}
           onUpdate={(self) => {
             const arr = self.array as Float32Array
             for (let i = 0; i < count; i++) {
