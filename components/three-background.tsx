@@ -39,7 +39,7 @@ function MovingStars({ count = 5000 }) {
           }}
         />
       </bufferGeometry>
-      <pointsMaterial size={0.05} color="#8b5cf6" sizeAttenuation transparent opacity={0.8} />
+      <pointsMaterial size={0.05} color="#1e40af" sizeAttenuation transparent opacity={0.8} />
     </points>
   )
 }
@@ -58,8 +58,8 @@ function CosmicNebula() {
       <mesh ref={mesh} scale={3} onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)}>
         <sphereGeometry args={[1, 64, 64]} />
         <meshStandardMaterial
-          color="#4c1d95"
-          emissive="#6d28d9"
+          color="#0a2472"
+          emissive="#1e40af"
           emissiveIntensity={hovered ? 1 : 0.5}
           roughness={0.5}
           metalness={0.8}
@@ -84,8 +84,8 @@ function ProfileGlow() {
     <mesh ref={mesh} position={[0, 1, -5]}>
       <torusGeometry args={[3, 0.6, 16, 100]} />
       <meshStandardMaterial
-        color="#6d28d9"
-        emissive="#8b5cf6"
+        color="#1e40af"
+        emissive="#3b82f6"
         emissiveIntensity={1.5}
         transparent
         opacity={0.3}
@@ -120,7 +120,7 @@ export function ThreeBackground() {
         <CameraController />
         <ambientLight intensity={0.2} />
         <pointLight position={[10, 10, 10]} intensity={0.5} />
-        <pointLight position={[-10, -10, -10]} color="#6d28d9" intensity={0.2} />
+        <pointLight position={[-10, -10, -10]} color="#1e40af" intensity={0.2} />
         <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
         <MovingStars />
         <CosmicNebula />

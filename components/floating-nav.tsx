@@ -63,14 +63,14 @@ export function FloatingNav() {
       }}
       transition={{ duration: 0.3 }}
     >
-      <div className="bg-slate-800/80 backdrop-blur-lg rounded-full px-4 py-2 border border-purple-500/30 shadow-lg shadow-purple-500/20">
+      <div className="bg-slate-800/80 backdrop-blur-lg rounded-full px-4 py-2 border border-blue-600/30 shadow-lg shadow-blue-600/20">
         <div className="flex space-x-1 sm:space-x-2">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               className={`p-2 rounded-full transition-all duration-300 ${
-                activeSection === item.id ? "bg-purple-600 text-white" : "text-slate-300 hover:bg-slate-700/70"
+                activeSection === item.id ? "bg-blue-600 text-white" : "text-slate-300 hover:bg-slate-700/70"
               }`}
               aria-label={item.label}
               title={item.label}
@@ -79,7 +79,7 @@ export function FloatingNav() {
               <span className="sr-only">{item.label}</span>
             </button>
           ))}
-          <div className="border-l border-purple-500/30 mx-1"></div>
+          <div className="border-l border-blue-600/30 mx-1"></div>
           <ThemeToggle />
         </div>
       </div>

@@ -156,11 +156,11 @@ export default function CosmicProfile() {
       <div className="relative z-20 container mx-auto px-4 py-8 max-w-6xl">
         {/* Hero Section */}
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-          <Card className="mb-8 bg-slate-800/40 border-purple-500/30 backdrop-blur-md shadow-xl hover:shadow-purple-500/10 transition-all duration-500">
+          <Card className="mb-8 bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
             <CardContent className="p-8">
               <div className="flex flex-col lg:flex-row items-center gap-8">
                 <div className="relative">
-                  <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-purple-500/50 shadow-lg shadow-purple-500/20">
+                  <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-blue-600/50 shadow-lg shadow-blue-600/20">
                     <div className="w-full h-full relative group">
                       <Image 
                         src="/profile-photo.jpeg" 
@@ -169,22 +169,22 @@ export default function CosmicProfile() {
                         priority={true}
                         className="object-cover object-top" 
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                   </div>
                   <div className="absolute -top-2 -right-2">
                     <Sparkles className="w-6 h-6 text-yellow-400 animate-pulse" />
                   </div>
-                  <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
                     <div className="text-white text-xs font-bold">AI</div>
                   </div>
                 </div>
 
                 <div className="flex-1 text-center lg:text-left">
-                  <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+                  <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 bg-clip-text text-transparent mb-4">
                     HITESH GUPTA
                   </h1>
-                  <p className="text-xl lg:text-2xl text-purple-300 mb-6">
+                  <p className="text-xl lg:text-2xl text-blue-300 mb-6">
                     AI Engineer | Full-Stack Developer | LLM & Prompt Engineering Expert
                   </p>
 
@@ -209,14 +209,14 @@ export default function CosmicProfile() {
 
                   <div className="mt-6 flex flex-wrap gap-4 justify-center lg:justify-start">
                     <Button 
-                      className="bg-purple-600 hover:bg-purple-700"
+                      className="bg-blue-600 hover:bg-blue-700"
                       onClick={() => window.location.href = 'mailto:hiteshgupta3012@gmail.com'}
                     >
                       <Mail className="mr-2 h-4 w-4" /> Contact Me
                     </Button>
                     <Button 
                       variant="outline" 
-                      className="border-purple-500 text-purple-300 hover:bg-purple-900/30"
+                      className="border-blue-600 text-blue-300 hover:bg-blue-900/30"
                       onClick={() => window.open('/Hitesh_Gupta_Resume_AI_Fullstack.pdf', '_blank')}
                     >
                       <Download className="mr-2 h-4 w-4" /> Download Resume
@@ -236,10 +236,10 @@ export default function CosmicProfile() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
         >
-          <Card className="mb-8 bg-slate-800/40 border-purple-500/30 backdrop-blur-md shadow-xl hover:shadow-purple-500/10 transition-all duration-500">
+          <Card className="mb-8 bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
-                <Brain className="w-6 h-6 text-purple-400" />
+                <Brain className="w-6 h-6 text-blue-400" />
                 <h2 className="text-2xl font-bold text-white">Profile</h2>
               </div>
               <p className="text-slate-300 leading-relaxed text-lg">
@@ -261,16 +261,16 @@ export default function CosmicProfile() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
         >
-          <Card className="mb-8 bg-slate-800/40 border-purple-500/30 backdrop-blur-md shadow-xl hover:shadow-purple-500/10 transition-all duration-500">
+          <Card className="mb-8 bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
-                <Code className="w-6 h-6 text-purple-400" />
+                <Code className="w-6 h-6 text-blue-400" />
                 <h2 className="text-2xl font-bold text-white">Technical Skills</h2>
               </div>
 
               <Tabs defaultValue="ai" className="w-full">
                 <TabsList className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 mb-6">
-                  <TabsTrigger value="ai" className="data-[state=active]:bg-purple-900/50">
+                  <TabsTrigger value="ai" className="data-[state=active]:bg-blue-900/50">
                     AI & ML
                   </TabsTrigger>
                   <TabsTrigger value="languages" className="data-[state=active]:bg-blue-900/50">
@@ -304,7 +304,7 @@ export default function CosmicProfile() {
                       <motion.div key={skill} variants={fadeIn}>
                         <Badge
                           variant="secondary"
-                          className="bg-purple-900/50 text-purple-200 border-purple-500/30 text-sm py-1.5"
+                          className="bg-blue-900/50 text-blue-200 border-blue-600/30 text-sm py-1.5"
                         >
                           {skill}
                         </Badge>
@@ -445,10 +445,10 @@ export default function CosmicProfile() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
         >
-          <Card className="mb-8 bg-slate-800/40 border-purple-500/30 backdrop-blur-md shadow-xl hover:shadow-purple-500/10 transition-all duration-500">
+          <Card className="mb-8 bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
-                <Rocket className="w-6 h-6 text-purple-400" />
+                <Rocket className="w-6 h-6 text-blue-400" />
                 <h2 className="text-2xl font-bold text-white">Experience</h2>
               </div>
 
@@ -456,16 +456,16 @@ export default function CosmicProfile() {
                 {experience.map((exp, index) => (
                   <motion.div
                     key={index}
-                    className="relative pl-8 border-l-2 border-purple-500/30"
+                    className="relative pl-8 border-l-2 border-blue-600/30"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <div className="absolute -left-2 top-0 w-4 h-4 bg-purple-500 rounded-full"></div>
+                    <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full"></div>
                     <div className="mb-4">
                       <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
-                      <p className="text-purple-300 font-medium">{exp.company}</p>
+                      <p className="text-blue-300 font-medium">{exp.company}</p>
                       <p className="text-slate-400 text-sm">
                         {exp.period} | {exp.type}
                       </p>
@@ -473,7 +473,7 @@ export default function CosmicProfile() {
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, i) => (
                         <li key={i} className="text-slate-300 flex items-start gap-2">
-                          <Star className="w-3 h-3 text-purple-400 mt-1.5 flex-shrink-0" />
+                          <Star className="w-3 h-3 text-blue-400 mt-1.5 flex-shrink-0" />
                           {achievement}
                         </li>
                       ))}
@@ -494,10 +494,10 @@ export default function CosmicProfile() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <Card className="h-full bg-slate-800/40 border-purple-500/30 backdrop-blur-md shadow-xl hover:shadow-purple-500/10 transition-all duration-500">
+            <Card className="h-full bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <BookOpen className="w-6 h-6 text-purple-400" />
+                  <BookOpen className="w-6 h-6 text-blue-400" />
                   <h2 className="text-2xl font-bold text-white">Education</h2>
                 </div>
 
@@ -509,7 +509,7 @@ export default function CosmicProfile() {
                     transition={{ delay: 0.1 }}
                   >
                     <h3 className="text-lg font-semibold text-white">Thapar University</h3>
-                    <p className="text-purple-300">Master of Computer Applications (MCA)</p>
+                    <p className="text-blue-300">Master of Computer Applications (MCA)</p>
                     <p className="text-slate-400">Computer Science | 2016–2018</p>
                   </motion.div>
                   <motion.div
@@ -519,7 +519,7 @@ export default function CosmicProfile() {
                     transition={{ delay: 0.2 }}
                   >
                     <h3 className="text-lg font-semibold text-white">Panjab University</h3>
-                    <p className="text-purple-300">Bachelor of Computer Applications</p>
+                    <p className="text-blue-300">Bachelor of Computer Applications</p>
                     <p className="text-slate-400">2013–2016</p>
                   </motion.div>
                 </div>
@@ -533,10 +533,10 @@ export default function CosmicProfile() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <Card className="h-full bg-slate-800/40 border-purple-500/30 backdrop-blur-md shadow-xl hover:shadow-purple-500/10 transition-all duration-500">
+            <Card className="h-full bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Award className="w-6 h-6 text-purple-400" />
+                  <Award className="w-6 h-6 text-blue-400" />
                   <h2 className="text-2xl font-bold text-white">Certifications</h2>
                 </div>
 
@@ -550,7 +550,7 @@ export default function CosmicProfile() {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
                     >
-                      <Star className="w-4 h-4 text-purple-400 mt-1 flex-shrink-0" />
+                      <Star className="w-4 h-4 text-blue-400 mt-1 flex-shrink-0" />
                       <span className="text-slate-300">{cert}</span>
                     </motion.div>
                   ))}
@@ -568,10 +568,10 @@ export default function CosmicProfile() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
         >
-          <Card className="mb-8 bg-slate-800/40 border-purple-500/30 backdrop-blur-md shadow-xl hover:shadow-purple-500/10 transition-all duration-500">
+          <Card className="mb-8 bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
-                <Github className="w-6 h-6 text-purple-400" />
+                <Github className="w-6 h-6 text-blue-400" />
                 <h2 className="text-2xl font-bold text-white">Open Source & Publications</h2>
               </div>
 
@@ -579,17 +579,17 @@ export default function CosmicProfile() {
                 {openSource.map((project, index) => (
                   <motion.div
                     key={index}
-                    className="group p-4 rounded-lg bg-slate-700/50 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10"
+                    className="group p-4 rounded-lg bg-slate-700/50 border border-blue-600/20 hover:border-blue-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/10"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
                     <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-lg font-semibold text-white group-hover:text-purple-300 transition-colors">
+                      <h3 className="text-lg font-semibold text-white group-hover:text-blue-300 transition-colors">
                         {project.title}
                       </h3>
-                      <Badge variant="outline" className="border-purple-500/50 text-purple-300">
+                      <Badge variant="outline" className="border-blue-600/50 text-blue-300">
                         {project.type}
                       </Badge>
                     </div>
@@ -598,7 +598,7 @@ export default function CosmicProfile() {
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="text-purple-300 hover:text-purple-200 hover:bg-purple-900/30"
+                        className="text-blue-300 hover:text-blue-200 hover:bg-blue-900/30"
                         onClick={() => {
                           if (project.type === "Article" && project.title === "Loopback4 on AWS Lambda") {
                             window.open("https://medium.com/@hitesh.gupta/running-loopback-v4-on-aws-lambda-56064a97b5c3", "_blank");
@@ -625,10 +625,10 @@ export default function CosmicProfile() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
         >
-          <Card className="bg-slate-800/40 border-purple-500/30 backdrop-blur-md shadow-xl hover:shadow-purple-500/10 transition-all duration-500">
+          <Card className="bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
-                <Target className="w-6 h-6 text-purple-400" />
+                <Target className="w-6 h-6 text-blue-400" />
                 <h2 className="text-2xl font-bold text-white">Looking For</h2>
               </div>
 
@@ -643,13 +643,13 @@ export default function CosmicProfile() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <Sparkles className="w-4 h-4 text-purple-400" />
+                    <Sparkles className="w-4 h-4 text-blue-400" />
                     <span className="text-slate-300">{role}</span>
                   </motion.div>
                 ))}
               </div>
 
-              <p className="text-purple-300 font-medium">
+              <p className="text-blue-300 font-medium">
                 Open to remote and hybrid opportunities with impact-driven teams.
               </p>
             </CardContent>
