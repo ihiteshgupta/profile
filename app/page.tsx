@@ -1,57 +1,22 @@
 "use client"
 
-import { useState, useEffect, Suspense } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
   Mail,
-  Phone,
   MapPin,
   Linkedin,
   Github,
   Twitter,
-  Star,
-  Sparkles,
-  Rocket,
-  Code,
-  Brain,
-  Award,
-  BookOpen,
-  Building2,
-  Layers,
-  Download,
   ExternalLink,
   Globe,
+  ArrowUpRight,
 } from "lucide-react"
-import { ThreeBackground } from "@/components/three-background"
-import { ScrollProgress } from "@/components/scroll-progress"
-import { FloatingNav } from "@/components/floating-nav"
 import { motion } from "framer-motion"
 
-// Animation variants
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-}
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-}
-
-export default function CosmicProfile() {
+export default function EditorialProfile() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -182,7 +147,7 @@ export default function CosmicProfile() {
       features: ["AI emotional coaching with CBT", "Vedic birth chart & Dasha predictions", "Relationship compatibility (Ashtakoot)", "Muhurta - auspicious timing"],
       status: "Production Ready",
       link: "https://sakha.app",
-      color: "purple",
+      color: "sage",
     },
     {
       name: "Dronacharya",
@@ -192,7 +157,7 @@ export default function CosmicProfile() {
       features: ["Multi-agent AI tutoring (no videos)", "Adaptive difficulty & teaching style", "Bronze/Silver/Gold certifications", "Gamification with XP & achievements"],
       status: "Coming Soon",
       link: "https://learnflow.ai",
-      color: "cyan",
+      color: "amber",
     },
   ]
 
@@ -208,629 +173,324 @@ export default function CosmicProfile() {
   }
 
   return (
-    <>
-      <ScrollProgress />
-      <FloatingNav />
-
-      {/* Three.js Background */}
-      <Suspense fallback={<div className="fixed inset-0 bg-slate-900" />}>
-        <ThreeBackground />
-      </Suspense>
-
-      <div className="relative z-20 container mx-auto px-4 py-8 max-w-6xl">
-        {/* Hero Section */}
-        <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-          <Card className="mb-8 bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
-            <CardContent className="p-8">
-              <div className="flex flex-col lg:flex-row items-center gap-8">
-                <div className="relative">
-                  <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-blue-600/50 shadow-lg shadow-blue-600/20">
-                    <div className="w-full h-full relative group">
-                      <Image 
-                        src="/profile-photo.jpeg" 
-                        alt="Hitesh Gupta" 
-                        fill={true}
-                        priority={true}
-                        className="object-cover object-top" 
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                  </div>
-                  <div className="absolute -top-2 -right-2">
-                    <Sparkles className="w-6 h-6 text-yellow-400 animate-pulse" />
-                  </div>
-                  <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                    <div className="text-white text-xs font-bold">AI</div>
-                  </div>
-                </div>
-
-                <div className="flex-1 text-center lg:text-left">
-                  <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 bg-clip-text text-transparent mb-4">
-                    HITESH GUPTA
-                  </h1>
-                  <p className="text-xl lg:text-2xl text-blue-300 mb-6">
-                    Founder & CEO, Margadeshaka | Building AI for Guidance & Learning
-                  </p>
-
-                  <div className="flex flex-wrap gap-4 justify-center lg:justify-start text-slate-300">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4" />
-                      <span>Chandigarh, India</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Mail className="w-4 h-4" />
-                      <span>hiteshgupta3012@gmail.com</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Phone className="w-4 h-4" />
-                      <span>+91 85590 93899</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Linkedin className="w-4 h-4" />
-                      <span>LinkedIn</span>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 flex flex-wrap gap-4 justify-center lg:justify-start">
-                    <Button 
-                      className="bg-blue-600 hover:bg-blue-700"
-                      onClick={() => window.location.href = 'mailto:hiteshgupta3012@gmail.com'}
-                    >
-                      <Mail className="mr-2 h-4 w-4" /> Contact Me
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      className="border-blue-600 text-blue-300 hover:bg-blue-900/30"
-                      onClick={() => window.open('/Hitesh_Gupta_Resume_AI_Fullstack.pdf', '_blank')}
-                    >
-                      <Download className="mr-2 h-4 w-4" /> Download Resume
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Profile Section */}
-        <motion.section
-          id="profile"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeIn}
-        >
-          <Card className="mb-8 bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
-            <CardContent className="p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <Brain className="w-6 h-6 text-blue-400" />
-                <h2 className="text-2xl font-bold text-white">Profile</h2>
-              </div>
-              <p className="text-slate-300 leading-relaxed text-lg">
-                Founder building AI products that guide and educate. After 6+ years leading AI systems at SourceFuse,
-                I&apos;m now creating <strong className="text-blue-300">Sakha</strong> (AI astrology companion) and{" "}
-                <strong className="text-blue-300">Dronacharya</strong> (AI learning platform) at Margadeshaka.
-                Specialized in Large Language Models, AI agents, LangChain, and building products that blend
-                ancient wisdom with modern technology.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.section>
-
-        {/* What I'm Building */}
-        <motion.section
-          id="products"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeIn}
-        >
-          <Card className="mb-8 bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
-            <CardContent className="p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <Building2 className="w-6 h-6 text-blue-400" />
-                <h2 className="text-2xl font-bold text-white">What I&apos;m Building</h2>
-              </div>
-
-              <div className="grid lg:grid-cols-2 gap-6">
-                {products.map((product, index) => (
-                  <motion.div
-                    key={product.name}
-                    className={`group p-6 rounded-xl bg-gradient-to-br ${
-                      product.color === "purple"
-                        ? "from-purple-900/40 to-slate-800/40 border-purple-600/30"
-                        : "from-cyan-900/40 to-slate-800/40 border-cyan-600/30"
-                    } border backdrop-blur-sm hover:shadow-lg transition-all duration-300`}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.2 }}
-                  >
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className={`text-2xl font-bold ${
-                        product.color === "purple" ? "text-purple-300" : "text-cyan-300"
-                      }`}>
-                        {product.name}
-                      </h3>
-                      <Badge
-                        variant="outline"
-                        className={`${
-                          product.status === "Production Ready"
-                            ? "border-green-500/50 text-green-300"
-                            : "border-yellow-500/50 text-yellow-300"
-                        }`}
-                      >
-                        {product.status}
-                      </Badge>
-                    </div>
-                    <p className={`text-lg mb-3 ${
-                      product.color === "purple" ? "text-purple-200" : "text-cyan-200"
-                    }`}>
-                      {product.tagline}
-                    </p>
-                    <p className="text-slate-300 mb-4 text-sm leading-relaxed">
-                      {product.description}
-                    </p>
-
-                    <div className="mb-4">
-                      <p className="text-slate-400 text-xs uppercase tracking-wide mb-2">Key Features</p>
-                      <ul className="space-y-1">
-                        {product.features.map((feature, i) => (
-                          <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
-                            <Sparkles className={`w-3 h-3 mt-1 flex-shrink-0 ${
-                              product.color === "purple" ? "text-purple-400" : "text-cyan-400"
-                            }`} />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {product.tech.map((tech) => (
-                        <Badge
-                          key={tech}
-                          variant="secondary"
-                          className={`text-xs ${
-                            product.color === "purple"
-                              ? "bg-purple-900/50 text-purple-200 border-purple-600/30"
-                              : "bg-cyan-900/50 text-cyan-200 border-cyan-600/30"
-                          }`}
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className={`${
-                        product.color === "purple"
-                          ? "border-purple-600 text-purple-300 hover:bg-purple-900/30"
-                          : "border-cyan-600 text-cyan-300 hover:bg-cyan-900/30"
-                      }`}
-                      onClick={() => window.open(product.link, "_blank")}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-1" /> Learn More
-                    </Button>
-                  </motion.div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </motion.section>
-
-        {/* Technical Skills */}
-        <motion.section
-          id="skills"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeIn}
-        >
-          <Card className="mb-8 bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
-            <CardContent className="p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <Code className="w-6 h-6 text-blue-400" />
-                <h2 className="text-2xl font-bold text-white">Technical Skills</h2>
-              </div>
-
-              <Tabs defaultValue="ai" className="w-full">
-                <TabsList className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 mb-6">
-                  <TabsTrigger value="ai" className="data-[state=active]:bg-blue-900/50">
-                    AI & ML
-                  </TabsTrigger>
-                  <TabsTrigger value="languages" className="data-[state=active]:bg-blue-900/50">
-                    Languages
-                  </TabsTrigger>
-                  <TabsTrigger value="frontend" className="data-[state=active]:bg-green-900/50">
-                    Frontend
-                  </TabsTrigger>
-                  <TabsTrigger value="backend" className="data-[state=active]:bg-orange-900/50">
-                    Backend
-                  </TabsTrigger>
-                  <TabsTrigger value="cloud" className="data-[state=active]:bg-cyan-900/50">
-                    Cloud
-                  </TabsTrigger>
-                  <TabsTrigger value="databases" className="data-[state=active]:bg-pink-900/50">
-                    Databases
-                  </TabsTrigger>
-                  <TabsTrigger value="tools" className="data-[state=active]:bg-yellow-900/50">
-                    Tools
-                  </TabsTrigger>
-                </TabsList>
-
-                <TabsContent value="ai" className="mt-0">
-                  <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    animate="visible"
-                    className="flex flex-wrap gap-2"
-                  >
-                    {skills.ai.map((skill) => (
-                      <motion.div key={skill} variants={fadeIn}>
-                        <Badge
-                          variant="secondary"
-                          className="bg-blue-900/50 text-blue-200 border-blue-600/30 text-sm py-1.5"
-                        >
-                          {skill}
-                        </Badge>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </TabsContent>
-
-                <TabsContent value="languages" className="mt-0">
-                  <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    animate="visible"
-                    className="flex flex-wrap gap-2"
-                  >
-                    {skills.languages.map((skill) => (
-                      <motion.div key={skill} variants={fadeIn}>
-                        <Badge
-                          variant="secondary"
-                          className="bg-blue-900/50 text-blue-200 border-blue-500/30 text-sm py-1.5"
-                        >
-                          {skill}
-                        </Badge>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </TabsContent>
-
-                <TabsContent value="frontend" className="mt-0">
-                  <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    animate="visible"
-                    className="flex flex-wrap gap-2"
-                  >
-                    {skills.frontend.map((skill) => (
-                      <motion.div key={skill} variants={fadeIn}>
-                        <Badge
-                          variant="secondary"
-                          className="bg-green-900/50 text-green-200 border-green-500/30 text-sm py-1.5"
-                        >
-                          {skill}
-                        </Badge>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </TabsContent>
-
-                <TabsContent value="backend" className="mt-0">
-                  <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    animate="visible"
-                    className="flex flex-wrap gap-2"
-                  >
-                    {skills.backend.map((skill) => (
-                      <motion.div key={skill} variants={fadeIn}>
-                        <Badge
-                          variant="secondary"
-                          className="bg-orange-900/50 text-orange-200 border-orange-500/30 text-sm py-1.5"
-                        >
-                          {skill}
-                        </Badge>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </TabsContent>
-
-                <TabsContent value="cloud" className="mt-0">
-                  <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    animate="visible"
-                    className="flex flex-wrap gap-2"
-                  >
-                    {skills.cloud.map((skill) => (
-                      <motion.div key={skill} variants={fadeIn}>
-                        <Badge
-                          variant="secondary"
-                          className="bg-cyan-900/50 text-cyan-200 border-cyan-500/30 text-sm py-1.5"
-                        >
-                          {skill}
-                        </Badge>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </TabsContent>
-
-                <TabsContent value="databases" className="mt-0">
-                  <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    animate="visible"
-                    className="flex flex-wrap gap-2"
-                  >
-                    {skills.databases.map((skill) => (
-                      <motion.div key={skill} variants={fadeIn}>
-                        <Badge
-                          variant="secondary"
-                          className="bg-pink-900/50 text-pink-200 border-pink-500/30 text-sm py-1.5"
-                        >
-                          {skill}
-                        </Badge>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </TabsContent>
-
-                <TabsContent value="tools" className="mt-0">
-                  <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    animate="visible"
-                    className="flex flex-wrap gap-2"
-                  >
-                    {skills.tools.map((skill) => (
-                      <motion.div key={skill} variants={fadeIn}>
-                        <Badge
-                          variant="secondary"
-                          className="bg-yellow-900/50 text-yellow-200 border-yellow-500/30 text-sm py-1.5"
-                        >
-                          {skill}
-                        </Badge>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </TabsContent>
-              </Tabs>
-            </CardContent>
-          </Card>
-        </motion.section>
-
-        {/* Experience */}
-        <motion.section
-          id="experience"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeIn}
-        >
-          <Card className="mb-8 bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
-            <CardContent className="p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <Rocket className="w-6 h-6 text-blue-400" />
-                <h2 className="text-2xl font-bold text-white">Experience</h2>
-              </div>
-
-              <div className="space-y-8">
-                {experience.map((exp, index) => (
-                  <motion.div
-                    key={index}
-                    className="relative pl-8 border-l-2 border-blue-600/30"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full"></div>
-                    <div className="mb-4">
-                      <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
-                      <p className="text-blue-300 font-medium">{exp.company}</p>
-                      <p className="text-slate-400 text-sm">
-                        {exp.period} | {exp.type}
-                      </p>
-                    </div>
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement, i) => (
-                        <li key={i} className="text-slate-300 flex items-start gap-2">
-                          <Star className="w-3 h-3 text-blue-400 mt-1.5 flex-shrink-0" />
-                          {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </motion.section>
-
-        {/* Education & Certifications */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-8">
-          <motion.section
-            id="education"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeIn}
-          >
-            <Card className="h-full bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <BookOpen className="w-6 h-6 text-blue-400" />
-                  <h2 className="text-2xl font-bold text-white">Education</h2>
-                </div>
-
-                <div className="space-y-6">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                  >
-                    <h3 className="text-lg font-semibold text-white">Thapar University</h3>
-                    <p className="text-blue-300">Master of Computer Applications (MCA)</p>
-                    <p className="text-slate-400">Computer Science | 2016–2018</p>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    <h3 className="text-lg font-semibold text-white">Panjab University</h3>
-                    <p className="text-blue-300">Bachelor of Computer Applications</p>
-                    <p className="text-slate-400">2013–2016</p>
-                  </motion.div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.section>
-
+    <div className="min-h-screen bg-[#FAF8F5]">
+      {/* Hero Section - Editorial Split */}
+      <section className="container mx-auto px-6 pt-20 pb-16 max-w-7xl">
+        <div className="grid md:grid-cols-12 gap-12 items-center">
+          {/* Left - Image */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeIn}
+            className="md:col-span-5 opacity-0 animate-fade-in"
+            style={{ animationDelay: '100ms' }}
           >
-            <Card className="h-full bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <Award className="w-6 h-6 text-blue-400" />
-                  <h2 className="text-2xl font-bold text-white">Certifications</h2>
-                </div>
-
-                <div className="space-y-3">
-                  {certifications.map((cert, index) => (
-                    <motion.div
-                      key={index}
-                      className="flex items-start gap-2"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <Star className="w-4 h-4 text-blue-400 mt-1 flex-shrink-0" />
-                      <span className="text-slate-300">{cert}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <div className="relative aspect-[3/4] max-w-sm mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8B9D83]/20 to-[#D4A574]/20 rounded-2xl transform -rotate-3"></div>
+              <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl transform rotate-1 img-editorial">
+                <Image
+                  src="/profile-photo.jpeg"
+                  alt="Hitesh Gupta"
+                  fill={true}
+                  priority={true}
+                  className="object-cover object-top"
+                />
+              </div>
+            </div>
           </motion.div>
+
+          {/* Right - Content */}
+          <div className="md:col-span-7 space-y-6">
+            <motion.div
+              className="opacity-0 animate-slide-in-bottom"
+              style={{ animationDelay: '200ms' }}
+            >
+              <p className="text-[#8B9D83] font-medium tracking-wider uppercase text-sm mb-2">Founder & CEO</p>
+              <h1 className="text-6xl md:text-7xl lg:text-8xl serif font-bold text-stone-900 leading-[0.95] mb-4">
+                Hitesh<br/>Gupta
+              </h1>
+              <div className="w-20 h-1 bg-gradient-to-r from-[#D4A574] to-transparent mb-6"></div>
+            </motion.div>
+
+            <motion.p
+              className="text-xl md:text-2xl text-stone-700 leading-relaxed opacity-0 animate-slide-in-bottom"
+              style={{ animationDelay: '300ms' }}
+            >
+              Building AI for Guidance & Learning at <span className="serif italic font-semibold">Margadeshaka</span>
+            </motion.p>
+
+            <motion.p
+              className="text-stone-600 leading-relaxed max-w-xl opacity-0 animate-slide-in-bottom"
+              style={{ animationDelay: '400ms' }}
+            >
+              After 6+ years leading AI systems at SourceFuse, I'm now creating products that blend ancient wisdom
+              with modern technology. Specialized in Large Language Models, AI agents, and building experiences that
+              truly help people.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-wrap gap-3 pt-4 opacity-0 animate-slide-in-bottom"
+              style={{ animationDelay: '500ms' }}
+            >
+              <div className="flex items-center gap-2 text-stone-600 text-sm">
+                <MapPin className="w-4 h-4 text-[#8B9D83]" />
+                Chandigarh, India
+              </div>
+              <div className="flex items-center gap-2 text-stone-600 text-sm">
+                <Mail className="w-4 h-4 text-[#8B9D83]" />
+                hiteshgupta3012@gmail.com
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-wrap gap-3 pt-2 opacity-0 animate-slide-in-bottom"
+              style={{ animationDelay: '600ms' }}
+            >
+              {socialLinks.map((social) => (
+                <Button
+                  key={social.name}
+                  variant="outline"
+                  size="sm"
+                  className="border-stone-300 hover:border-[#8B9D83] hover:bg-[#8B9D83]/5 transition-all"
+                  onClick={() => window.open(social.url, "_blank")}
+                >
+                  <social.icon className="w-4 h-4 mr-2" />
+                  {social.name}
+                </Button>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <div className="section-divider container mx-auto max-w-7xl"></div>
+
+      {/* Products Section - Feature Cards */}
+      <section className="container mx-auto px-6 py-16 max-w-7xl">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-6xl serif font-bold text-stone-900 mb-4">What I'm Building</h2>
+          <p className="text-stone-600 text-lg max-w-2xl mx-auto">
+            Two AI products that guide your journey and accelerate your learning
+          </p>
         </div>
 
-        {/* Open Source & Publications */}
-        <motion.section
-          id="opensource"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeIn}
-        >
-          <Card className="mb-8 bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
-            <CardContent className="p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <Github className="w-6 h-6 text-blue-400" />
-                <h2 className="text-2xl font-bold text-white">Open Source & Publications</h2>
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {products.map((product, index) => (
+            <motion.div
+              key={product.name}
+              className={`product-card group relative bg-white rounded-2xl p-8 shadow-lg border border-stone-200 opacity-0 animate-slide-in-bottom`}
+              style={{ animationDelay: `${700 + index * 150}ms` }}
+            >
+              {/* Status Badge */}
+              <div className="flex items-center justify-between mb-4">
+                <Badge className={product.status === "Production Ready" ? "badge-sage" : "badge-amber"}>
+                  {product.status}
+                </Badge>
+                <ExternalLink
+                  className="w-5 h-5 text-stone-400 group-hover:text-[#8B9D83] transition-colors cursor-pointer"
+                  onClick={() => window.open(product.link, "_blank")}
+                />
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {openSource.map((project, index) => (
-                  <motion.div
-                    key={index}
-                    className="group p-4 rounded-lg bg-slate-700/50 border border-blue-600/20 hover:border-blue-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/10"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-lg font-semibold text-white group-hover:text-blue-300 transition-colors">
-                        {project.title}
-                      </h3>
-                      <Badge variant="outline" className="border-blue-600/50 text-blue-300">
-                        {project.type}
-                      </Badge>
-                    </div>
-                    <p className="text-slate-300">{project.description}</p>
-                    {project.link && (
-                      <div className="mt-4 flex justify-end">
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="text-blue-300 hover:text-blue-200 hover:bg-blue-900/30"
-                          onClick={() => window.open(project.link, "_blank")}
-                        >
-                          <ExternalLink className="w-4 h-4 mr-1" /> View
-                        </Button>
-                      </div>
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </motion.section>
-
-        {/* Connect */}
-        <motion.section
-          id="connect"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeIn}
-        >
-          <Card className="bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
-            <CardContent className="p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <Layers className="w-6 h-6 text-blue-400" />
-                <h2 className="text-2xl font-bold text-white">Connect</h2>
-              </div>
-
-              <p className="text-slate-300 mb-6">
-                Building AI products at Margadeshaka. Open to conversations about AI, startups,
-                and technology. Let&apos;s connect!
+              <h3 className="serif text-4xl font-bold text-stone-900 mb-2">{product.name}</h3>
+              <p className={`text-lg mb-4 ${product.color === "sage" ? "text-[#6B7D63]" : "text-[#B8935F]"}`}>
+                {product.tagline}
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                {socialLinks.map((social, index) => (
-                  <motion.div
-                    key={social.name}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <Button
-                      variant="outline"
-                      className="border-blue-600/50 text-blue-300 hover:bg-blue-900/30"
-                      onClick={() => window.open(social.url, "_blank")}
-                    >
-                      <social.icon className="w-4 h-4 mr-2" />
-                      {social.name}
-                    </Button>
-                  </motion.div>
+              <p className="text-stone-600 leading-relaxed mb-6">
+                {product.description}
+              </p>
+
+              {/* Features */}
+              <div className="space-y-2 mb-6">
+                {product.features.map((feature, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-stone-600">
+                    <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${
+                      product.color === "sage" ? "bg-[#8B9D83]" : "bg-[#D4A574]"
+                    }`}></div>
+                    {feature}
+                  </div>
                 ))}
               </div>
 
-              <div className="mt-6 pt-6 border-t border-blue-600/20">
-                <p className="text-blue-300 font-medium">
-                  Building the future of AI-powered guidance and learning.
-                </p>
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2">
+                {product.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs px-3 py-1 rounded-full bg-stone-100 text-stone-600 border border-stone-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
-            </CardContent>
-          </Card>
-        </motion.section>
-      </div>
-    </>
+
+              {/* Hover Arrow */}
+              <div className="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ArrowUpRight className="w-6 h-6 text-[#8B9D83]" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <div className="section-divider container mx-auto max-w-7xl"></div>
+
+      {/* Experience Section - Timeline */}
+      <section className="container mx-auto px-6 py-16 max-w-5xl">
+        <h2 className="text-5xl md:text-6xl serif font-bold text-stone-900 mb-12 text-center">Experience</h2>
+
+        <div className="space-y-12">
+          {experience.map((exp, index) => (
+            <motion.div
+              key={index}
+              className="relative pl-8 border-l-2 border-stone-200 opacity-0 animate-slide-in-bottom"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="absolute -left-[9px] top-0 w-4 h-4 bg-[#8B9D83] rounded-full border-4 border-[#FAF8F5]"></div>
+
+              <div className="pb-2">
+                <h3 className="serif text-2xl font-bold text-stone-900">{exp.title}</h3>
+                <p className="text-[#8B9D83] font-medium">{exp.company}</p>
+                <p className="text-sm text-stone-500">{exp.period} · {exp.type}</p>
+              </div>
+
+              <ul className="mt-4 space-y-2">
+                {exp.achievements.map((achievement, i) => (
+                  <li key={i} className="text-stone-600 leading-relaxed flex gap-3">
+                    <span className="text-[#D4A574] mt-1.5">•</span>
+                    <span>{achievement}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <div className="section-divider container mx-auto max-w-7xl"></div>
+
+      {/* Skills Section - Grouped Badges */}
+      <section className="container mx-auto px-6 py-16 max-w-6xl">
+        <h2 className="text-5xl md:text-6xl serif font-bold text-stone-900 mb-12 text-center">Technical Expertise</h2>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {Object.entries(skills).map(([category, items], index) => (
+            <motion.div
+              key={category}
+              className="opacity-0 animate-slide-in-bottom"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <h3 className="serif text-2xl font-semibold text-stone-900 mb-4 capitalize">
+                {category === "ai" ? "AI & ML" : category}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {items.map((skill) => (
+                  <Badge
+                    key={skill}
+                    className="badge-sage hover:bg-[#8B9D83]/20 transition-colors cursor-default"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <div className="section-divider container mx-auto max-w-7xl"></div>
+
+      {/* Open Source Section */}
+      <section className="container mx-auto px-6 py-16 max-w-6xl">
+        <h2 className="text-5xl md:text-6xl serif font-bold text-stone-900 mb-12 text-center">
+          Open Source & Publications
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {openSource.map((project, index) => (
+            <motion.div
+              key={index}
+              className="group p-6 bg-white rounded-xl border border-stone-200 hover:border-[#8B9D83] hover:shadow-md transition-all cursor-pointer opacity-0 animate-slide-in-bottom"
+              style={{ animationDelay: `${index * 80}ms` }}
+              onClick={() => project.link && window.open(project.link, "_blank")}
+            >
+              <div className="flex items-start justify-between mb-3">
+                <Badge className="badge-amber text-xs">{project.type}</Badge>
+                <ExternalLink className="w-4 h-4 text-stone-400 group-hover:text-[#8B9D83] transition-colors" />
+              </div>
+              <h3 className="serif text-xl font-semibold text-stone-900 mb-2 group-hover:text-[#8B9D83] transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-sm text-stone-600 leading-relaxed">{project.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <div className="section-divider container mx-auto max-w-7xl"></div>
+
+      {/* Education & Certifications */}
+      <section className="container mx-auto px-6 py-16 max-w-6xl">
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Education */}
+          <div>
+            <h2 className="text-4xl serif font-bold text-stone-900 mb-8">Education</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="serif text-xl font-semibold text-stone-900">Thapar University</h3>
+                <p className="text-[#8B9D83] font-medium">Master of Computer Applications</p>
+                <p className="text-sm text-stone-500">Computer Science · 2016–2018</p>
+              </div>
+              <div>
+                <h3 className="serif text-xl font-semibold text-stone-900">Panjab University</h3>
+                <p className="text-[#8B9D83] font-medium">Bachelor of Computer Applications</p>
+                <p className="text-sm text-stone-500">2013–2016</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Certifications */}
+          <div>
+            <h2 className="text-4xl serif font-bold text-stone-900 mb-8">Certifications</h2>
+            <div className="space-y-3">
+              {certifications.map((cert, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#D4A574] mt-2 flex-shrink-0"></div>
+                  <p className="text-stone-600">{cert}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer / Connect */}
+      <section className="bg-gradient-to-b from-[#FAF8F5] to-[#F3F1ED] py-20">
+        <div className="container mx-auto px-6 max-w-4xl text-center">
+          <h2 className="text-5xl serif font-bold text-stone-900 mb-6">Let's Connect</h2>
+          <p className="text-xl text-stone-600 mb-8 max-w-2xl mx-auto">
+            Building AI products at Margadeshaka. Open to conversations about AI, startups, and technology.
+          </p>
+
+          <div className="flex flex-wrap gap-4 justify-center">
+            {socialLinks.map((social) => (
+              <Button
+                key={social.name}
+                size="lg"
+                className="bg-[#8B9D83] hover:bg-[#6B7D63] text-white transition-all"
+                onClick={() => window.open(social.url, "_blank")}
+              >
+                <social.icon className="w-4 h-4 mr-2" />
+                {social.name}
+              </Button>
+            ))}
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-stone-300">
+            <p className="serif text-2xl italic text-[#8B9D83]">
+              Building the future of AI-powered guidance and learning
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
