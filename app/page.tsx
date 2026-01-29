@@ -12,6 +12,7 @@ import {
   MapPin,
   Linkedin,
   Github,
+  Twitter,
   Star,
   Sparkles,
   Rocket,
@@ -19,9 +20,11 @@ import {
   Brain,
   Award,
   BookOpen,
-  Target,
+  Building2,
+  Layers,
   Download,
   ExternalLink,
+  Globe,
 } from "lucide-react"
 import { ThreeBackground } from "@/components/three-background"
 import { ScrollProgress } from "@/components/scroll-progress"
@@ -67,9 +70,21 @@ export default function CosmicProfile() {
 
   const experience = [
     {
+      title: "Founder & CEO",
+      company: "Margadeshaka",
+      period: "2024 – Present",
+      type: "Full-time",
+      achievements: [
+        "Building Sakha - AI-powered Vedic astrology companion with GPT-4 and Swiss Ephemeris",
+        "Developing Dronacharya (LearnFlow AI) - Multi-agent AI tutoring platform replacing passive video learning",
+        "Architecting React Native mobile apps with Azure OpenAI, LangGraph, and real-time streaming",
+        "Creating AI products that blend ancient wisdom with modern technology for guidance and education",
+      ],
+    },
+    {
       title: "Technical Lead",
       company: "SourceFuse Technologies",
-      period: "Aug 2023 – Present",
+      period: "Aug 2023 – Dec 2024",
       type: "Remote | Full-time",
       achievements: [
         "Designed and developed end-to-end AI-integrated systems using TypeScript, Loopback, React",
@@ -121,22 +136,71 @@ export default function CosmicProfile() {
 
   const openSource = [
     {
+      title: "gmail-mcp-server",
+      description: "MCP server for Gmail integration with Claude",
+      type: "MCP Server",
+      link: "https://github.com/anthropics/claude-code",
+    },
+    {
+      title: "telegram-mcp",
+      description: "MCP server for Telegram messaging automation",
+      type: "MCP Server",
+      link: "https://github.com/anthropics/claude-code",
+    },
+    {
+      title: "apple-mcp",
+      description: "MCP server for Apple apps (Messages, Notes, Reminders, Calendar)",
+      type: "MCP Server",
+      link: "https://github.com/anthropics/claude-code",
+    },
+    {
+      title: "indian-stock-advisor-mcp",
+      description: "MCP server for Zerodha Kite trading and analysis",
+      type: "MCP Server",
+      link: "https://github.com/anthropics/claude-code",
+    },
+    {
       title: "Loopback4 on AWS Lambda",
       description: "Medium guide on deploying serverless APIs",
       type: "Article",
+      link: "https://medium.com/@hitesh.gupta/running-loopback-v4-on-aws-lambda-56064a97b5c3",
     },
     {
       title: "loopback4-dynamic-datasource",
       description: "NPM package for multi-tenant database switching",
       type: "Package",
+      link: "https://www.npmjs.com/package/loopback4-dynamic-datasource",
     },
   ]
 
-  const lookingFor = [
-    "Full-stack engineering (React, Node.js, Python)",
-    "LLM Agents & Prompt Engineering (LangChain, OpenAI)",
-    "AI Automation and Cognitive UX",
-    "Cloud-native system design (AWS)",
+  const products = [
+    {
+      name: "Sakha",
+      tagline: "Your AI Friend for Life's Journey",
+      description: "Sakha combines ancient Vedic wisdom with modern AI to provide personalized guidance through life's moments. Get birth chart analysis, relationship compatibility, auspicious timing, and emotional support.",
+      tech: ["React Native", "Azure OpenAI", "Swiss Ephemeris", "GPT-4"],
+      features: ["AI emotional coaching with CBT", "Vedic birth chart & Dasha predictions", "Relationship compatibility (Ashtakoot)", "Muhurta - auspicious timing"],
+      status: "Production Ready",
+      link: "https://sakha.app",
+      color: "purple",
+    },
+    {
+      name: "Dronacharya",
+      tagline: "Learn by Thinking, Not Watching",
+      description: "Dronacharya replaces passive video learning with active AI tutoring. Six specialized AI agents guide you through interactive lessons, adapt to your understanding, and help you build real projects.",
+      tech: ["Next.js", "LangGraph", "Multi-Agent AI", "TypeScript"],
+      features: ["Multi-agent AI tutoring (no videos)", "Adaptive difficulty & teaching style", "Bronze/Silver/Gold certifications", "Gamification with XP & achievements"],
+      status: "Coming Soon",
+      link: "https://learnflow.ai",
+      color: "cyan",
+    },
+  ]
+
+  const socialLinks = [
+    { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/hiteshgupta3012" },
+    { name: "GitHub", icon: Github, url: "https://github.com/hiteshgupta3012" },
+    { name: "Twitter", icon: Twitter, url: "https://twitter.com/hiteshgupta3012" },
+    { name: "Margadeshaka", icon: Globe, url: "https://margadeshaka.ai" },
   ]
 
   if (!mounted) {
@@ -185,7 +249,7 @@ export default function CosmicProfile() {
                     HITESH GUPTA
                   </h1>
                   <p className="text-xl lg:text-2xl text-blue-300 mb-6">
-                    AI Engineer | Full-Stack Developer | LLM & Prompt Engineering Expert
+                    Founder & CEO, Margadeshaka | Building AI for Guidance & Learning
                   </p>
 
                   <div className="flex flex-wrap gap-4 justify-center lg:justify-start text-slate-300">
@@ -243,12 +307,116 @@ export default function CosmicProfile() {
                 <h2 className="text-2xl font-bold text-white">Profile</h2>
               </div>
               <p className="text-slate-300 leading-relaxed text-lg">
-                Computer Science post-graduate with 6+ years of experience building AI-driven applications and
-                full-stack systems. Specialized in Large Language Models (LLMs), AI agents, LangChain, and prompt
-                engineering to deliver transformative automation. Proven experience in React, Node.js, Python, and
-                cloud-native deployments on AWS. Focused on creating scalable, thoughtful systems that blend
-                intelligence with clean user experience.
+                Founder building AI products that guide and educate. After 6+ years leading AI systems at SourceFuse,
+                I&apos;m now creating <strong className="text-blue-300">Sakha</strong> (AI astrology companion) and{" "}
+                <strong className="text-blue-300">Dronacharya</strong> (AI learning platform) at Margadeshaka.
+                Specialized in Large Language Models, AI agents, LangChain, and building products that blend
+                ancient wisdom with modern technology.
               </p>
+            </CardContent>
+          </Card>
+        </motion.section>
+
+        {/* What I'm Building */}
+        <motion.section
+          id="products"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+        >
+          <Card className="mb-8 bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
+            <CardContent className="p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <Building2 className="w-6 h-6 text-blue-400" />
+                <h2 className="text-2xl font-bold text-white">What I&apos;m Building</h2>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-6">
+                {products.map((product, index) => (
+                  <motion.div
+                    key={product.name}
+                    className={`group p-6 rounded-xl bg-gradient-to-br ${
+                      product.color === "purple"
+                        ? "from-purple-900/40 to-slate-800/40 border-purple-600/30"
+                        : "from-cyan-900/40 to-slate-800/40 border-cyan-600/30"
+                    } border backdrop-blur-sm hover:shadow-lg transition-all duration-300`}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2 }}
+                  >
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className={`text-2xl font-bold ${
+                        product.color === "purple" ? "text-purple-300" : "text-cyan-300"
+                      }`}>
+                        {product.name}
+                      </h3>
+                      <Badge
+                        variant="outline"
+                        className={`${
+                          product.status === "Production Ready"
+                            ? "border-green-500/50 text-green-300"
+                            : "border-yellow-500/50 text-yellow-300"
+                        }`}
+                      >
+                        {product.status}
+                      </Badge>
+                    </div>
+                    <p className={`text-lg mb-3 ${
+                      product.color === "purple" ? "text-purple-200" : "text-cyan-200"
+                    }`}>
+                      {product.tagline}
+                    </p>
+                    <p className="text-slate-300 mb-4 text-sm leading-relaxed">
+                      {product.description}
+                    </p>
+
+                    <div className="mb-4">
+                      <p className="text-slate-400 text-xs uppercase tracking-wide mb-2">Key Features</p>
+                      <ul className="space-y-1">
+                        {product.features.map((feature, i) => (
+                          <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
+                            <Sparkles className={`w-3 h-3 mt-1 flex-shrink-0 ${
+                              product.color === "purple" ? "text-purple-400" : "text-cyan-400"
+                            }`} />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {product.tech.map((tech) => (
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className={`text-xs ${
+                            product.color === "purple"
+                              ? "bg-purple-900/50 text-purple-200 border-purple-600/30"
+                              : "bg-cyan-900/50 text-cyan-200 border-cyan-600/30"
+                          }`}
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className={`${
+                        product.color === "purple"
+                          ? "border-purple-600 text-purple-300 hover:bg-purple-900/30"
+                          : "border-cyan-600 text-cyan-300 hover:bg-cyan-900/30"
+                      }`}
+                      onClick={() => window.open(product.link, "_blank")}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-1" /> Learn More
+                    </Button>
+                  </motion.div>
+                ))}
+              </div>
             </CardContent>
           </Card>
         </motion.section>
@@ -575,7 +743,7 @@ export default function CosmicProfile() {
                 <h2 className="text-2xl font-bold text-white">Open Source & Publications</h2>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {openSource.map((project, index) => (
                   <motion.div
                     key={index}
@@ -594,22 +762,18 @@ export default function CosmicProfile() {
                       </Badge>
                     </div>
                     <p className="text-slate-300">{project.description}</p>
-                    <div className="mt-4 flex justify-end">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="text-blue-300 hover:text-blue-200 hover:bg-blue-900/30"
-                        onClick={() => {
-                          if (project.type === "Article" && project.title === "Loopback4 on AWS Lambda") {
-                            window.open("https://medium.com/@hitesh.gupta/running-loopback-v4-on-aws-lambda-56064a97b5c3", "_blank");
-                          } else if (project.type === "Package" && project.title === "loopback4-dynamic-datasource") {
-                            window.open("https://www.npmjs.com/package/loopback4-dynamic-datasource", "_blank");
-                          }
-                        }}
-                      >
-                        <ExternalLink className="w-4 h-4 mr-1" /> View
-                      </Button>
-                    </div>
+                    {project.link && (
+                      <div className="mt-4 flex justify-end">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-blue-300 hover:text-blue-200 hover:bg-blue-900/30"
+                          onClick={() => window.open(project.link, "_blank")}
+                        >
+                          <ExternalLink className="w-4 h-4 mr-1" /> View
+                        </Button>
+                      </div>
+                    )}
                   </motion.div>
                 ))}
               </div>
@@ -617,9 +781,9 @@ export default function CosmicProfile() {
           </Card>
         </motion.section>
 
-        {/* Looking For */}
+        {/* Connect */}
         <motion.section
-          id="looking"
+          id="connect"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -628,30 +792,41 @@ export default function CosmicProfile() {
           <Card className="bg-slate-800/40 border-blue-600/30 backdrop-blur-md shadow-xl hover:shadow-blue-600/10 transition-all duration-500">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
-                <Target className="w-6 h-6 text-blue-400" />
-                <h2 className="text-2xl font-bold text-white">Looking For</h2>
+                <Layers className="w-6 h-6 text-blue-400" />
+                <h2 className="text-2xl font-bold text-white">Connect</h2>
               </div>
 
-              <p className="text-slate-300 mb-4">Roles in:</p>
-              <div className="grid md:grid-cols-2 gap-3 mb-6">
-                {lookingFor.map((role, index) => (
+              <p className="text-slate-300 mb-6">
+                Building AI products at Margadeshaka. Open to conversations about AI, startups,
+                and technology. Let&apos;s connect!
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                {socialLinks.map((social, index) => (
                   <motion.div
-                    key={index}
-                    className="flex items-center gap-2"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    key={social.name}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <Sparkles className="w-4 h-4 text-blue-400" />
-                    <span className="text-slate-300">{role}</span>
+                    <Button
+                      variant="outline"
+                      className="border-blue-600/50 text-blue-300 hover:bg-blue-900/30"
+                      onClick={() => window.open(social.url, "_blank")}
+                    >
+                      <social.icon className="w-4 h-4 mr-2" />
+                      {social.name}
+                    </Button>
                   </motion.div>
                 ))}
               </div>
 
-              <p className="text-blue-300 font-medium">
-                Open to remote and hybrid opportunities with impact-driven teams.
-              </p>
+              <div className="mt-6 pt-6 border-t border-blue-600/20">
+                <p className="text-blue-300 font-medium">
+                  Building the future of AI-powered guidance and learning.
+                </p>
+              </div>
             </CardContent>
           </Card>
         </motion.section>
