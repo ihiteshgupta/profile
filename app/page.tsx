@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Github, Linkedin, Twitter, ArrowUpRight, Mail, Globe } from "lucide-react"
+import { Github, Linkedin, Twitter, ArrowUpRight, Globe } from "lucide-react"
 
 export default function Profile() {
   const [mounted, setMounted] = useState(false)
@@ -240,7 +240,7 @@ export default function Profile() {
       <section className="py-32 border-t border-[#1A1A1A]">
         <div className="container mx-auto px-6 max-w-5xl text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 opacity-0 animate-fade-in-up">
-            Let's build something
+            Let&apos;s build something
           </h2>
 
           <a
