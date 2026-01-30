@@ -1,493 +1,272 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import {
-  Mail,
-  MapPin,
-  Linkedin,
-  Github,
-  Twitter,
-  ExternalLink,
-  Globe,
-  ArrowUpRight,
-} from "lucide-react"
-import { motion } from "framer-motion"
+import { Github, Linkedin, Twitter, ArrowUpRight, Mail, Globe } from "lucide-react"
 
-export default function EditorialProfile() {
+export default function Profile() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
-  const skills = {
-    ai: ["LLMs", "LangChain", "OpenAI", "Prompt Engineering", "AWS SageMaker", "Bedrock", "Deep Learning"],
-    languages: ["JavaScript", "TypeScript", "Python", "Node.js"],
-    frontend: ["React.js", "Next.js", "Angular", "TailwindCSS"],
-    backend: ["Loopback 4", "Flask", "REST", "GraphQL", "OAuth"],
-    cloud: ["AWS Lambda", "S3", "EC2", "DynamoDB", "SageMaker", "Docker", "Kubernetes", "Terraform"],
-    databases: ["PostgreSQL", "DynamoDB", "MongoDB"],
-    tools: ["Git", "Jira", "Camunda", "Swagger", "Kafka", "SQS", "BullMQ"],
-  }
-
-  const experience = [
-    {
-      title: "Founder & CEO",
-      company: "Margadeshaka",
-      period: "2024 – Present",
-      type: "Full-time",
-      achievements: [
-        "Building Sakha - AI-powered Vedic astrology companion with GPT-4 and Swiss Ephemeris",
-        "Developing Dronacharya (LearnFlow AI) - Multi-agent AI tutoring platform replacing passive video learning",
-        "Architecting React Native mobile apps with Azure OpenAI, LangGraph, and real-time streaming",
-        "Creating AI products that blend ancient wisdom with modern technology for guidance and education",
-      ],
-    },
-    {
-      title: "Technical Lead",
-      company: "SourceFuse Technologies",
-      period: "Aug 2023 – Dec 2024",
-      type: "Remote | Full-time",
-      achievements: [
-        "Designed and developed end-to-end AI-integrated systems using TypeScript, Loopback, React",
-        "Integrated LLM agents and prompt-driven workflows for code review, automation, and support",
-        "Mentored developers on best practices in full-stack development and LangChain integrations",
-        "Led architectural design and built scalable, cloud-native microservices on AWS",
-      ],
-    },
-    {
-      title: "Senior Software Engineer",
-      company: "SourceFuse Technologies",
-      period: "Jul 2021 – Aug 2023",
-      type: "Remote",
-      achievements: [
-        "Developed React/Angular apps integrated with Loopback APIs for health and crypto clients",
-        "Contributed to ML pipelines on AWS for intelligent automation in telecom support tools",
-        "Led multi-member cross-functional teams to deliver scalable LLM agents for operations",
-      ],
-    },
-    {
-      title: "Software Engineer",
-      company: "SourceFuse Technologies",
-      period: "Aug 2020 – Jul 2021",
-      type: "Remote",
-      achievements: [
-        "Architected multi-tenant SaaS apps using Loopback4, Postgres, and AWS services",
-        "Built fitness and gamified lifestyle apps with microservices, Kafka, and cloud pipelines",
-        "Developed serverless APIs and coordinated DevOps teams for release automation",
-      ],
-    },
-    {
-      title: "Junior Software Engineer",
-      company: "SourceFuse Technologies",
-      period: "Nov 2018 – Aug 2020",
-      type: "Remote",
-      achievements: [
-        "Delivered dashboards, form engines, and data flows across healthcare, mobility, and edtech",
-        "Worked in agile teams using React, Redux, AWS Lambda, Postgres, and campaign APIs",
-      ],
-    },
-  ]
-
-  const certifications = [
-    "AWS Certified Developer – Associate",
-    "Introduction to Generative AI (Google Cloud)",
-    "Introduction to Large Language Models (Google Cloud)",
-    "Problem Solving – HackerRank (Basic)",
-  ]
-
-  const openSource = [
-    {
-      title: "gmail-mcp-server",
-      description: "MCP server for Gmail integration with Claude",
-      type: "MCP Server",
-      link: "https://github.com/ihiteshgupta/gmail-mcp-server",
-    },
-    {
-      title: "telegram-mcp",
-      description: "MCP server for Telegram messaging automation",
-      type: "MCP Server",
-      link: "https://github.com/ihiteshgupta/telegram-mcp",
-    },
-    {
-      title: "apple-mcp",
-      description: "MCP server for Apple apps (Messages, Notes, Reminders, Calendar)",
-      type: "MCP Server",
-      link: "https://github.com/ihiteshgupta/apple-mcp",
-    },
-    {
-      title: "indian-stock-advisor-mcp",
-      description: "MCP server for Zerodha Kite trading and analysis",
-      type: "MCP Server",
-      link: "https://github.com/ihiteshgupta/indian-stock-advisor-mcp",
-    },
-    {
-      title: "Loopback4 on AWS Lambda",
-      description: "Medium guide on deploying serverless APIs",
-      type: "Article",
-      link: "https://medium.com/@hitesh.gupta/running-loopback-v4-on-aws-lambda-56064a97b5c3",
-    },
-    {
-      title: "loopback4-dynamic-datasource",
-      description: "NPM package for multi-tenant database switching",
-      type: "Package",
-      link: "https://www.npmjs.com/package/loopback4-dynamic-datasource",
-    },
-  ]
-
-  const products = [
+  const ventures = [
     {
       name: "Sakha",
       tagline: "Your AI Friend for Life's Journey",
-      description: "Sakha combines ancient Vedic wisdom with modern AI to provide personalized guidance through life's moments. Get birth chart analysis, relationship compatibility, auspicious timing, and emotional support.",
-      tech: ["React Native", "Azure OpenAI", "Swiss Ephemeris", "GPT-4"],
-      features: ["AI emotional coaching with CBT", "Vedic birth chart & Dasha predictions", "Relationship compatibility (Ashtakoot)", "Muhurta - auspicious timing"],
-      status: "Production Ready",
+      description: "Ancient Vedic wisdom meets modern AI. Birth charts, relationship compatibility, auspicious timing, and emotional support—all in one app.",
+      features: ["AI Emotional Coaching", "Vedic Birth Charts", "Relationship Compatibility", "Muhurta Timing"],
+      tech: ["React Native", "Azure OpenAI", "GPT-4", "Swiss Ephemeris"],
+      status: "live",
       link: "https://sakha.app",
-      color: "sage",
+      color: "amber",
     },
     {
       name: "Dronacharya",
       tagline: "Learn by Thinking, Not Watching",
-      description: "Dronacharya replaces passive video learning with active AI tutoring. Six specialized AI agents guide you through interactive lessons, adapt to your understanding, and help you build real projects.",
+      description: "Multi-agent AI tutoring that replaces passive video learning. Six specialized AI agents adapt to your understanding and help you build real projects.",
+      features: ["Multi-Agent Tutoring", "Adaptive Learning", "Project-Based", "Gamified Progress"],
       tech: ["Next.js", "LangGraph", "Multi-Agent AI", "TypeScript"],
-      features: ["Multi-agent AI tutoring (no videos)", "Adaptive difficulty & teaching style", "Bronze/Silver/Gold certifications", "Gamification with XP & achievements"],
-      status: "Coming Soon",
+      status: "soon",
       link: "https://learnflow.ai",
-      color: "amber",
+      color: "blue",
     },
   ]
 
-  const socialLinks = [
+  const experience = [
+    { company: "Margadeshaka", role: "Founder & CEO", period: "2024 —" },
+    { company: "SourceFuse", role: "Technical Lead", period: "2018 — 2024" },
+  ]
+
+  const skills = {
+    highlight: ["LLMs", "Claude", "LangChain", "React", "TypeScript", "Node.js"],
+    regular: ["Python", "Next.js", "AWS", "Docker", "Kubernetes", "PostgreSQL", "MongoDB", "FastAPI", "Swift", "Go"],
+  }
+
+  const openSource = [
+    { name: "gmail-mcp-server", description: "Gmail integration for Claude", link: "https://github.com/ihiteshgupta/gmail-mcp-server" },
+    { name: "telegram-mcp", description: "Telegram messaging automation", link: "https://github.com/ihiteshgupta/telegram-mcp" },
+    { name: "apple-mcp", description: "Apple apps integration", link: "https://github.com/ihiteshgupta/apple-mcp" },
+    { name: "indian-stock-advisor-mcp", description: "Zerodha trading & analysis", link: "https://github.com/ihiteshgupta/indian-stock-advisor-mcp" },
+    { name: "whatsapp-mcp", description: "WhatsApp messaging", link: "https://github.com/ihiteshgupta/whatsapp-mcp" },
+    { name: "homebridge-mcp", description: "Smart home control", link: "https://github.com/ihiteshgupta/homebridge-mcp" },
+  ]
+
+  const socials = [
+    { name: "GitHub", icon: Github, url: "https://github.com/ihiteshgupta" },
     { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/hiteshgupta3012" },
-    { name: "GitHub", icon: Github, url: "https://github.com/hiteshgupta3012" },
     { name: "Twitter", icon: Twitter, url: "https://twitter.com/hiteshgupta3012" },
     { name: "Margadeshaka", icon: Globe, url: "https://margadeshaka.ai" },
   ]
 
-  if (!mounted) {
-    return null
-  }
+  if (!mounted) return null
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5]">
-      {/* Hero Section - Editorial Split */}
-      <section className="container mx-auto px-6 pt-20 pb-16 max-w-7xl">
-        <div className="grid md:grid-cols-12 gap-12 items-center">
-          {/* Left - Image */}
-          <motion.div
-            className="md:col-span-5 opacity-0 animate-fade-in"
-            style={{ animationDelay: '100ms' }}
-          >
-            <div className="relative aspect-[3/4] max-w-sm mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#8B9D83]/20 to-[#D4A574]/20 rounded-2xl transform -rotate-3"></div>
-              <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl transform rotate-1 img-editorial">
-                <Image
-                  src="/profile-photo.jpeg"
-                  alt="Hitesh Gupta"
-                  fill={true}
-                  priority={true}
-                  className="object-cover object-top"
-                />
-              </div>
+    <div className="min-h-screen bg-[#0A0A0A] text-white relative">
+      {/* Noise overlay */}
+      <div className="noise-overlay" />
+
+      {/* Hero Section */}
+      <section className="min-h-screen flex flex-col justify-center relative overflow-hidden">
+        {/* Gradient orb */}
+        <div className="gradient-orb -top-40 -right-40 animate-float animate-pulse-glow" />
+
+        <div className="container mx-auto px-6 max-w-5xl relative z-10">
+          {/* Social icons - top right */}
+          <div className="absolute top-8 right-0 flex items-center gap-4 opacity-0 animate-fade-in delay-500">
+            {socials.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#555] hover:text-white transition-colors"
+                aria-label={social.name}
+              >
+                <social.icon className="w-5 h-5" />
+              </a>
+            ))}
+          </div>
+
+          {/* Main content */}
+          <div className="pt-32 pb-20">
+            <p className="text-[#555] text-sm font-medium tracking-widest uppercase mb-6 opacity-0 animate-fade-in-up">
+              Founder & CEO
+            </p>
+
+            <h1 className="text-[clamp(3rem,12vw,9rem)] font-extrabold leading-[0.9] tracking-tight mb-8 opacity-0 animate-fade-in-up delay-100">
+              <span className="text-gradient-hover cursor-default">HITESH</span>
+              <br />
+              <span className="text-gradient-hover cursor-default">GUPTA</span>
+            </h1>
+
+            <p className="text-[#888] text-xl md:text-2xl max-w-xl leading-relaxed mb-12 opacity-0 animate-fade-in-up delay-200">
+              Building AI for Guidance & Learning at{" "}
+              <a href="https://margadeshaka.ai" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#3B82F6] transition-colors">
+                Margadeshaka
+              </a>
+            </p>
+
+            <div className="flex items-center gap-6 text-[#555] text-sm opacity-0 animate-fade-in-up delay-300">
+              <span>Chandigarh, India</span>
+              <span className="w-1 h-1 bg-[#333] rounded-full" />
+              <span>6+ years in AI & Full-Stack</span>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Right - Content */}
-          <div className="md:col-span-7 space-y-6">
-            <motion.div
-              className="opacity-0 animate-slide-in-bottom"
-              style={{ animationDelay: '200ms' }}
-            >
-              <p className="text-[#8B9D83] font-medium tracking-wider uppercase text-sm mb-2">Founder & CEO</p>
-              <h1 className="text-6xl md:text-7xl lg:text-8xl serif font-bold text-stone-900 leading-[0.95] mb-4">
-                Hitesh<br/>Gupta
-              </h1>
-              <div className="w-20 h-1 bg-gradient-to-r from-[#D4A574] to-transparent mb-6"></div>
-            </motion.div>
-
-            <motion.p
-              className="text-xl md:text-2xl text-stone-700 leading-relaxed opacity-0 animate-slide-in-bottom"
-              style={{ animationDelay: '300ms' }}
-            >
-              Building AI for Guidance & Learning at <span className="serif italic font-semibold">Margadeshaka</span>
-            </motion.p>
-
-            <motion.p
-              className="text-stone-600 leading-relaxed max-w-xl opacity-0 animate-slide-in-bottom"
-              style={{ animationDelay: '400ms' }}
-            >
-              After 6+ years leading AI systems at SourceFuse, I'm now creating products that blend ancient wisdom
-              with modern technology. Specialized in Large Language Models, AI agents, and building experiences that
-              truly help people.
-            </motion.p>
-
-            <motion.div
-              className="flex flex-wrap gap-3 pt-4 opacity-0 animate-slide-in-bottom"
-              style={{ animationDelay: '500ms' }}
-            >
-              <div className="flex items-center gap-2 text-stone-600 text-sm">
-                <MapPin className="w-4 h-4 text-[#8B9D83]" />
-                Chandigarh, India
-              </div>
-              <div className="flex items-center gap-2 text-stone-600 text-sm">
-                <Mail className="w-4 h-4 text-[#8B9D83]" />
-                hiteshgupta3012@gmail.com
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex flex-wrap gap-3 pt-2 opacity-0 animate-slide-in-bottom"
-              style={{ animationDelay: '600ms' }}
-            >
-              {socialLinks.map((social) => (
-                <Button
-                  key={social.name}
-                  variant="outline"
-                  size="sm"
-                  className="border-stone-300 hover:border-[#8B9D83] hover:bg-[#8B9D83]/5 transition-all"
-                  onClick={() => window.open(social.url, "_blank")}
-                >
-                  <social.icon className="w-4 h-4 mr-2" />
-                  {social.name}
-                </Button>
-              ))}
-            </motion.div>
+          {/* Scroll indicator */}
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in delay-700">
+            <div className="scroll-indicator" />
           </div>
         </div>
       </section>
 
-      <div className="section-divider container mx-auto max-w-7xl"></div>
+      {/* Ventures Section */}
+      <section className="py-32 relative">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <p className="section-label">Building</p>
 
-      {/* Products Section - Feature Cards */}
-      <section className="container mx-auto px-6 py-16 max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl serif font-bold text-stone-900 mb-4">What I'm Building</h2>
-          <p className="text-stone-600 text-lg max-w-2xl mx-auto">
-            Two AI products that guide your journey and accelerate your learning
-          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {ventures.map((venture, index) => (
+              <a
+                key={venture.name}
+                href={venture.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`card-dark ${venture.color === "amber" ? "card-glow-amber" : "card-glow-blue"} rounded-2xl p-8 block group opacity-0 animate-fade-in-up`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <span className={venture.status === "live" ? "status-live" : "status-soon"}>
+                    {venture.status === "live" ? "Live" : "Coming Soon"}
+                  </span>
+                  <ArrowUpRight className="w-5 h-5 text-[#333] group-hover:text-[#888] transition-colors" />
+                </div>
+
+                <h3 className="text-3xl font-bold mb-2">{venture.name}</h3>
+                <p className={`text-sm mb-4 ${venture.color === "amber" ? "text-[#F59E0B]" : "text-[#3B82F6]"}`}>
+                  {venture.tagline}
+                </p>
+
+                <p className="text-[#888] text-sm leading-relaxed mb-6">
+                  {venture.description}
+                </p>
+
+                <div className="space-y-1 mb-6">
+                  {venture.features.map((feature) => (
+                    <div key={feature} className="flex items-center gap-2 text-sm text-[#666]">
+                      <span className={`w-1 h-1 rounded-full ${venture.color === "amber" ? "bg-[#F59E0B]" : "bg-[#3B82F6]"}`} />
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {venture.tech.map((t) => (
+                    <span key={t} className="text-xs px-2 py-1 bg-[#1A1A1A] text-[#666] rounded">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {products.map((product, index) => (
-            <motion.div
-              key={product.name}
-              className={`product-card group relative bg-white rounded-2xl p-8 shadow-lg border border-stone-200 opacity-0 animate-slide-in-bottom`}
-              style={{ animationDelay: `${700 + index * 150}ms` }}
-            >
-              {/* Status Badge */}
-              <div className="flex items-center justify-between mb-4">
-                <Badge className={product.status === "Production Ready" ? "badge-sage" : "badge-amber"}>
-                  {product.status}
-                </Badge>
-                <ExternalLink
-                  className="w-5 h-5 text-stone-400 group-hover:text-[#8B9D83] transition-colors cursor-pointer"
-                  onClick={() => window.open(product.link, "_blank")}
-                />
-              </div>
-
-              <h3 className="serif text-4xl font-bold text-stone-900 mb-2">{product.name}</h3>
-              <p className={`text-lg mb-4 ${product.color === "sage" ? "text-[#6B7D63]" : "text-[#B8935F]"}`}>
-                {product.tagline}
-              </p>
-
-              <p className="text-stone-600 leading-relaxed mb-6">
-                {product.description}
-              </p>
-
-              {/* Features */}
-              <div className="space-y-2 mb-6">
-                {product.features.map((feature, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-stone-600">
-                    <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${
-                      product.color === "sage" ? "bg-[#8B9D83]" : "bg-[#D4A574]"
-                    }`}></div>
-                    {feature}
+      {/* Experience Section */}
+      <section className="py-32 border-t border-[#1A1A1A]">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-16">
+            <div>
+              <p className="section-label">Experience</p>
+              <div className="space-y-8">
+                {experience.map((exp, index) => (
+                  <div key={index} className="opacity-0 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+                    <p className="text-2xl font-semibold">{exp.company}</p>
+                    <p className="text-[#888]">{exp.role}</p>
+                    <p className="text-[#555] text-sm">{exp.period}</p>
                   </div>
                 ))}
               </div>
+            </div>
 
-              {/* Tech Stack */}
+            <div>
+              <p className="section-label">Stack</p>
               <div className="flex flex-wrap gap-2">
-                {product.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs px-3 py-1 rounded-full bg-stone-100 text-stone-600 border border-stone-200"
-                  >
-                    {tech}
-                  </span>
+                {skills.highlight.map((skill) => (
+                  <span key={skill} className="pill pill-highlight">{skill}</span>
                 ))}
-              </div>
-
-              {/* Hover Arrow */}
-              <div className="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
-                <ArrowUpRight className="w-6 h-6 text-[#8B9D83]" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <div className="section-divider container mx-auto max-w-7xl"></div>
-
-      {/* Experience Section - Timeline */}
-      <section className="container mx-auto px-6 py-16 max-w-5xl">
-        <h2 className="text-5xl md:text-6xl serif font-bold text-stone-900 mb-12 text-center">Experience</h2>
-
-        <div className="space-y-12">
-          {experience.map((exp, index) => (
-            <motion.div
-              key={index}
-              className="relative pl-8 border-l-2 border-stone-200 opacity-0 animate-slide-in-bottom"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="absolute -left-[9px] top-0 w-4 h-4 bg-[#8B9D83] rounded-full border-4 border-[#FAF8F5]"></div>
-
-              <div className="pb-2">
-                <h3 className="serif text-2xl font-bold text-stone-900">{exp.title}</h3>
-                <p className="text-[#8B9D83] font-medium">{exp.company}</p>
-                <p className="text-sm text-stone-500">{exp.period} · {exp.type}</p>
-              </div>
-
-              <ul className="mt-4 space-y-2">
-                {exp.achievements.map((achievement, i) => (
-                  <li key={i} className="text-stone-600 leading-relaxed flex gap-3">
-                    <span className="text-[#D4A574] mt-1.5">•</span>
-                    <span>{achievement}</span>
-                  </li>
+                {skills.regular.map((skill) => (
+                  <span key={skill} className="pill">{skill}</span>
                 ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <div className="section-divider container mx-auto max-w-7xl"></div>
-
-      {/* Skills Section - Grouped Badges */}
-      <section className="container mx-auto px-6 py-16 max-w-6xl">
-        <h2 className="text-5xl md:text-6xl serif font-bold text-stone-900 mb-12 text-center">Technical Expertise</h2>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {Object.entries(skills).map(([category, items], index) => (
-            <motion.div
-              key={category}
-              className="opacity-0 animate-slide-in-bottom"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <h3 className="serif text-2xl font-semibold text-stone-900 mb-4 capitalize">
-                {category === "ai" ? "AI & ML" : category}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {items.map((skill) => (
-                  <Badge
-                    key={skill}
-                    className="badge-sage hover:bg-[#8B9D83]/20 transition-colors cursor-default"
-                  >
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <div className="section-divider container mx-auto max-w-7xl"></div>
-
-      {/* Open Source Section */}
-      <section className="container mx-auto px-6 py-16 max-w-6xl">
-        <h2 className="text-5xl md:text-6xl serif font-bold text-stone-900 mb-12 text-center">
-          Open Source & Publications
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {openSource.map((project, index) => (
-            <motion.div
-              key={index}
-              className="group p-6 bg-white rounded-xl border border-stone-200 hover:border-[#8B9D83] hover:shadow-md transition-all cursor-pointer opacity-0 animate-slide-in-bottom"
-              style={{ animationDelay: `${index * 80}ms` }}
-              onClick={() => project.link && window.open(project.link, "_blank")}
-            >
-              <div className="flex items-start justify-between mb-3">
-                <Badge className="badge-amber text-xs">{project.type}</Badge>
-                <ExternalLink className="w-4 h-4 text-stone-400 group-hover:text-[#8B9D83] transition-colors" />
-              </div>
-              <h3 className="serif text-xl font-semibold text-stone-900 mb-2 group-hover:text-[#8B9D83] transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-sm text-stone-600 leading-relaxed">{project.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <div className="section-divider container mx-auto max-w-7xl"></div>
-
-      {/* Education & Certifications */}
-      <section className="container mx-auto px-6 py-16 max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Education */}
-          <div>
-            <h2 className="text-4xl serif font-bold text-stone-900 mb-8">Education</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="serif text-xl font-semibold text-stone-900">Thapar University</h3>
-                <p className="text-[#8B9D83] font-medium">Master of Computer Applications</p>
-                <p className="text-sm text-stone-500">Computer Science · 2016–2018</p>
-              </div>
-              <div>
-                <h3 className="serif text-xl font-semibold text-stone-900">Panjab University</h3>
-                <p className="text-[#8B9D83] font-medium">Bachelor of Computer Applications</p>
-                <p className="text-sm text-stone-500">2013–2016</p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Certifications */}
-          <div>
-            <h2 className="text-4xl serif font-bold text-stone-900 mb-8">Certifications</h2>
-            <div className="space-y-3">
-              {certifications.map((cert, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#D4A574] mt-2 flex-shrink-0"></div>
-                  <p className="text-stone-600">{cert}</p>
+      {/* Open Source Section */}
+      <section className="py-32 border-t border-[#1A1A1A]">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <p className="section-label">Open Source</p>
+          <p className="text-[#888] mb-8 max-w-xl">
+            MCP servers that extend Claude Code with real-world integrations
+          </p>
+
+          <div className="horizontal-scroll">
+            {openSource.map((project, index) => (
+              <a
+                key={project.name}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-dark rounded-xl p-6 min-w-[280px] flex-shrink-0 group opacity-0 animate-fade-in-up"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <Github className="w-5 h-5 text-[#555]" />
+                  <ArrowUpRight className="w-4 h-4 text-[#333] group-hover:text-[#888] transition-colors" />
                 </div>
-              ))}
-            </div>
+                <h4 className="font-semibold mb-1 group-hover:text-[#3B82F6] transition-colors">{project.name}</h4>
+                <p className="text-[#666] text-sm">{project.description}</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Footer / Connect */}
-      <section className="bg-gradient-to-b from-[#FAF8F5] to-[#F3F1ED] py-20">
-        <div className="container mx-auto px-6 max-w-4xl text-center">
-          <h2 className="text-5xl serif font-bold text-stone-900 mb-6">Let's Connect</h2>
-          <p className="text-xl text-stone-600 mb-8 max-w-2xl mx-auto">
-            Building AI products at Margadeshaka. Open to conversations about AI, startups, and technology.
-          </p>
+      <section className="py-32 border-t border-[#1A1A1A]">
+        <div className="container mx-auto px-6 max-w-5xl text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 opacity-0 animate-fade-in-up">
+            Let's build something
+          </h2>
 
-          <div className="flex flex-wrap gap-4 justify-center">
-            {socialLinks.map((social) => (
-              <Button
+          <a
+            href="mailto:hiteshgupta3012@gmail.com"
+            className="inline-block text-xl md:text-2xl mono text-[#888] hover:text-white transition-colors mb-12 opacity-0 animate-fade-in-up delay-100"
+          >
+            hiteshgupta3012@gmail.com
+          </a>
+
+          <div className="flex justify-center gap-6 opacity-0 animate-fade-in-up delay-200">
+            {socials.map((social) => (
+              <a
                 key={social.name}
-                size="lg"
-                className="bg-[#8B9D83] hover:bg-[#6B7D63] text-white transition-all"
-                onClick={() => window.open(social.url, "_blank")}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[#555] hover:text-white transition-colors text-sm"
               >
-                <social.icon className="w-4 h-4 mr-2" />
+                <social.icon className="w-4 h-4" />
                 {social.name}
-              </Button>
+              </a>
             ))}
           </div>
 
-          <div className="mt-12 pt-8 border-t border-stone-300">
-            <p className="serif text-2xl italic text-[#8B9D83]">
-              Building the future of AI-powered guidance and learning
-            </p>
+          <div className="mt-20 pt-8 border-t border-[#1A1A1A]">
+            <p className="text-[#333] text-sm">© 2025 Hitesh Gupta</p>
           </div>
         </div>
       </section>
