@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Github, Linkedin, Twitter, ArrowUpRight, Globe } from "lucide-react"
+import { Github, Linkedin, Twitter, ArrowUpRight, Globe, Package } from "lucide-react"
 
 export default function Profile() {
   const [mounted, setMounted] = useState(false)
@@ -34,22 +34,52 @@ export default function Profile() {
   ]
 
   const experience = [
-    { company: "Margadeshaka", role: "Founder & CEO", period: "2024 —" },
-    { company: "SourceFuse", role: "Technical Lead", period: "2018 — 2024" },
+    {
+      company: "Comviva",
+      role: "AI Specialist",
+      period: "2024 —",
+      description: "Leading AI initiatives and building intelligent solutions for telecom and enterprise clients.",
+      current: true,
+    },
+    {
+      company: "Margadeshaka",
+      role: "Founder",
+      period: "2024 —",
+      description: "Building AI systems for guidance and learning. Creating intelligent applications that combine ancient wisdom with modern AI.",
+      current: true,
+    },
+    {
+      company: "SourceFuse",
+      role: "Technical Lead",
+      period: "2018 — 2024",
+      description: "Led development across healthtech, telecom, crypto, and enterprise platforms. Built LLM-powered agents, integrated OpenAI models with AWS SageMaker, and delivered scalable React/Node architectures.",
+    },
   ]
 
+  const education = [
+    {
+      institution: "Thapar University",
+      degree: "Bachelor of Engineering",
+      field: "Computer Science",
+      period: "2014 — 2018",
+    },
+  ]
+
+  const domains = ["Healthtech", "Telecom", "Crypto", "Enterprise", "EdTech"]
+
   const skills = {
-    highlight: ["LLMs", "Claude", "LangChain", "React", "TypeScript", "Node.js"],
-    regular: ["Python", "Next.js", "AWS", "Docker", "Kubernetes", "PostgreSQL", "MongoDB", "FastAPI", "Swift", "Go"],
+    highlight: ["LLMs", "Claude", "LangChain", "Prompt Engineering", "React", "TypeScript"],
+    regular: ["Node.js", "Python", "Next.js", "AWS", "Docker", "Kubernetes", "PostgreSQL", "MongoDB", "FastAPI", "Swift", "Go", "OpenAI", "AWS SageMaker"],
   }
 
   const openSource = [
-    { name: "gmail-mcp-server", description: "Gmail integration for Claude", link: "https://github.com/ihiteshgupta/gmail-mcp-server" },
-    { name: "telegram-mcp", description: "Telegram messaging automation", link: "https://github.com/ihiteshgupta/telegram-mcp" },
-    { name: "apple-mcp", description: "Apple apps integration", link: "https://github.com/ihiteshgupta/apple-mcp" },
-    { name: "indian-stock-advisor-mcp", description: "Zerodha trading & analysis", link: "https://github.com/ihiteshgupta/indian-stock-advisor-mcp" },
-    { name: "whatsapp-mcp", description: "WhatsApp messaging", link: "https://github.com/ihiteshgupta/whatsapp-mcp" },
-    { name: "homebridge-mcp", description: "Smart home control", link: "https://github.com/ihiteshgupta/homebridge-mcp" },
+    { name: "loopback4-dynamic-datasource", description: "NPM package for multi-tenant database switching", link: "https://www.npmjs.com/package/loopback4-dynamic-datasource", type: "npm" },
+    { name: "gmail-mcp-server", description: "Gmail integration for Claude", link: "https://github.com/ihiteshgupta/gmail-mcp-server", type: "mcp" },
+    { name: "telegram-mcp", description: "Telegram messaging automation", link: "https://github.com/ihiteshgupta/telegram-mcp", type: "mcp" },
+    { name: "apple-mcp", description: "Apple apps integration", link: "https://github.com/ihiteshgupta/apple-mcp", type: "mcp" },
+    { name: "indian-stock-advisor-mcp", description: "Zerodha trading & analysis", link: "https://github.com/ihiteshgupta/indian-stock-advisor-mcp", type: "mcp" },
+    { name: "whatsapp-mcp", description: "WhatsApp messaging", link: "https://github.com/ihiteshgupta/whatsapp-mcp", type: "mcp" },
+    { name: "homebridge-mcp", description: "Smart home control", link: "https://github.com/ihiteshgupta/homebridge-mcp", type: "mcp" },
   ]
 
   const socials = [
@@ -91,7 +121,7 @@ export default function Profile() {
           {/* Main content */}
           <div className="pt-32 pb-20">
             <p className="text-[#555] text-sm font-medium tracking-widest uppercase mb-6 opacity-0 animate-fade-in-up">
-              Founder & CEO
+              AI Engineer · LLM Specialist · Full-Stack Developer
             </p>
 
             <h1 className="text-[clamp(3rem,12vw,9rem)] font-extrabold leading-[0.9] tracking-tight mb-8 opacity-0 animate-fade-in-up delay-100">
@@ -110,7 +140,9 @@ export default function Profile() {
             <div className="flex items-center gap-6 text-[#555] text-sm opacity-0 animate-fade-in-up delay-300">
               <span>Chandigarh, India</span>
               <span className="w-1 h-1 bg-[#333] rounded-full" />
-              <span>6+ years in AI & Full-Stack</span>
+              <span>6+ years building AI systems</span>
+              <span className="w-1 h-1 bg-[#333] rounded-full" />
+              <span>Thapar University</span>
             </div>
           </div>
 
@@ -185,7 +217,20 @@ export default function Profile() {
                   <div key={index} className="opacity-0 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
                     <p className="text-2xl font-semibold">{exp.company}</p>
                     <p className="text-[#888]">{exp.role}</p>
-                    <p className="text-[#555] text-sm">{exp.period}</p>
+                    <p className="text-[#555] text-sm mb-2">{exp.period}</p>
+                    <p className="text-[#666] text-sm leading-relaxed">{exp.description}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Education */}
+              <div className="mt-12">
+                <p className="section-label">Education</p>
+                {education.map((edu, index) => (
+                  <div key={index} className="opacity-0 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+                    <p className="text-xl font-semibold">{edu.institution}</p>
+                    <p className="text-[#888]">{edu.degree} in {edu.field}</p>
+                    <p className="text-[#555] text-sm">{edu.period}</p>
                   </div>
                 ))}
               </div>
@@ -193,12 +238,20 @@ export default function Profile() {
 
             <div>
               <p className="section-label">Stack</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-12">
                 {skills.highlight.map((skill) => (
                   <span key={skill} className="pill pill-highlight">{skill}</span>
                 ))}
                 {skills.regular.map((skill) => (
                   <span key={skill} className="pill">{skill}</span>
+                ))}
+              </div>
+
+              {/* Domains */}
+              <p className="section-label">Domains</p>
+              <div className="flex flex-wrap gap-2">
+                {domains.map((domain) => (
+                  <span key={domain} className="px-3 py-1 text-sm border border-[#222] text-[#888] rounded-full">{domain}</span>
                 ))}
               </div>
             </div>
@@ -211,7 +264,7 @@ export default function Profile() {
         <div className="container mx-auto px-6 max-w-5xl">
           <p className="section-label">Open Source</p>
           <p className="text-[#888] mb-8 max-w-xl">
-            MCP servers that extend Claude Code with real-world integrations
+            NPM packages and MCP servers that extend developer workflows
           </p>
 
           <div className="horizontal-scroll">
@@ -225,8 +278,17 @@ export default function Profile() {
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <div className="flex items-start justify-between mb-3">
-                  <Github className="w-5 h-5 text-[#555]" />
-                  <ArrowUpRight className="w-4 h-4 text-[#333] group-hover:text-[#888] transition-colors" />
+                  {project.type === "npm" ? (
+                    <Package className="w-5 h-5 text-[#CB3837]" />
+                  ) : (
+                    <Github className="w-5 h-5 text-[#555]" />
+                  )}
+                  <div className="flex items-center gap-2">
+                    <span className={`text-xs px-2 py-0.5 rounded ${project.type === "npm" ? "bg-[#CB3837]/10 text-[#CB3837]" : "bg-[#3B82F6]/10 text-[#3B82F6]"}`}>
+                      {project.type === "npm" ? "NPM" : "MCP"}
+                    </span>
+                    <ArrowUpRight className="w-4 h-4 text-[#333] group-hover:text-[#888] transition-colors" />
+                  </div>
                 </div>
                 <h4 className="font-semibold mb-1 group-hover:text-[#3B82F6] transition-colors">{project.name}</h4>
                 <p className="text-[#666] text-sm">{project.description}</p>
