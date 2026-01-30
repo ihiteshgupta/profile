@@ -37,7 +37,7 @@ export default function Profile() {
     {
       company: "Comviva",
       role: "AI Specialist",
-      period: "2024 —",
+      period: "Jul 2025 —",
       description: "Leading AI initiatives and building intelligent solutions for telecom and enterprise clients.",
       current: true,
     },
@@ -51,7 +51,7 @@ export default function Profile() {
     {
       company: "SourceFuse",
       role: "Technical Lead",
-      period: "2018 — 2024",
+      period: "2018 — Jul 2025",
       description: "Led development across healthtech, telecom, crypto, and enterprise platforms. Built LLM-powered agents, integrated OpenAI models with AWS SageMaker, and delivered scalable React/Node architectures.",
     },
   ]
@@ -137,11 +137,11 @@ export default function Profile() {
               </a>
             </p>
 
-            <div className="flex items-center gap-6 text-[#555] text-sm opacity-0 animate-fade-in-up delay-300">
+            <div className="flex flex-wrap items-center gap-3 md:gap-6 text-[#888] text-sm opacity-0 animate-fade-in-up delay-300">
               <span>Chandigarh, India</span>
-              <span className="w-1 h-1 bg-[#333] rounded-full" />
+              <span className="hidden md:block w-1 h-1 bg-[#444] rounded-full" />
               <span>6+ years building AI systems</span>
-              <span className="w-1 h-1 bg-[#333] rounded-full" />
+              <span className="hidden md:block w-1 h-1 bg-[#444] rounded-full" />
               <span>Thapar University</span>
             </div>
           </div>
